@@ -33,15 +33,20 @@ linters = [
     'codespell'
 ]
 
+formaters = [
+    'black',
+    'isort',
+]
+
 
 [tool.setuptools.packages.find]
 where = ["src"]
 
 [tool.setuptools.package-data]
-aind-pydantic-codegen = ["py.typed"]
+aind_pydantic_codegen = ["py.typed"]
 
 [tool.setuptools.dynamic]
-version = {attr = "aind-pydantic-codegen.__version__"}
+version = {attr = "aind_pydantic_codegen.__version__"}
 readme = {file = ["README.md"]}
 
 [tool.ruff]
