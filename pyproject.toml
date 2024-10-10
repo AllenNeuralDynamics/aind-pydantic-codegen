@@ -1,0 +1,59 @@
+[build-system]
+requires = ["setuptools", "setuptools-scm"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "aind-pydantic-codegen"
+description = "A library for automatic generation of pydantic models."
+authors = [
+    { name = "Bruno Cruz", email = "bruno.cruz@alleninstitute.org" },
+]
+license = {text = "MIT"}
+requires-python = ">=3.11"
+dynamic = ["version", "readme"]
+classifiers = [
+    "Programming Language :: Python :: 3.11",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: Microsoft :: Windows",
+]
+dependencies = [
+    'pydantic>=2.7',
+]
+
+[project.urls]
+Documentation = "https://github.com/AllenNeuralDynamics/aind-pydantic-codegen"
+Repository = "https://github.com/AllenNeuralDynamics/aind-pydantic-codegen"
+Issues = "https://github.com/AllenNeuralDynamics/aind-pydantic-codegen/issues"
+Changelog = "https://github.com/AllenNeuralDynamics/aind-pydantic-codegen/releases"
+
+[project.optional-dependencies]
+
+linters = [
+    'ruff',
+    'codespell'
+]
+
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+aind-pydantic-codegen = ["py.typed"]
+
+[tool.setuptools.dynamic]
+version = {attr = "aind-pydantic-codegen.__version__"}
+readme = {file = ["README.md"]}
+
+[tool.ruff]
+line-length = 120
+target-version = 'py311'
+
+[tool.ruff.lint]
+extend-select = ['Q', 'RUF100', 'C90', 'I']
+extend-ignore = []
+mccabe = { max-complexity = 14 }
+pydocstyle = { convention = 'google' }
+
+[tool.codespell]
+skip = '.git,*.pdf,*.svg,./docs/_build'
+ignore-words-list = 'nd'
