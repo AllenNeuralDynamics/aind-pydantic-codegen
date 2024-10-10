@@ -33,7 +33,7 @@ linters = [
     'codespell'
 ]
 
-formaters = [
+formatters = [
     'black',
     'isort',
 ]
