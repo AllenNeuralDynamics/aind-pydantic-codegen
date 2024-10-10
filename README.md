@@ -1,4 +1,8 @@
 # aind-pydantic-codegen
+
+[![License](https://img.shields.io/badge/license-MIT-brightgreen)](LICENSE)
+[![CodeStyle](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
+
 A library for automatic generation of pydantic models
 
 
