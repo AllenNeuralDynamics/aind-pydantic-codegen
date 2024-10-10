@@ -49,3 +49,29 @@ with GeneratorContext(code_validators=[AstValidator()], code_formatters=[BlackFo
     ctx.add_generator(model_generator, "seed_class.py")
     ctx.write_all()
 ```
+
+
+## Contributing
+
+If you would like to contribute to this repository, open an `Issue` and/or `Pull Request` on this repository.
+
+### Linters and testing
+
+- Install the provided linting and testing tools in the `project.toml`.
+
+#### Tests
+
+To run tests locally, run the following command from the root directory of the repository:
+
+```bash
+python -m unittest
+```
+
+#### Linters
+
+- We use `ruff` for linting. To run the linter, run the following command from the root directory of the repository:
+
+```bash
+ruff format .
+ruff check . --fix
+```
