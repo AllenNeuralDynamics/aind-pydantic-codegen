@@ -100,7 +100,9 @@ class MappableReferenceField(Generic[TMapTo]):
         _args: List[str] = []
         for value in self._parsed_source_keys_handlers:
             _args.append(
-                value.function_handle(parsed_source[key]) if value.function_handle is not None else parsed_source[key]
+                value.function_handle(parsed_source[value.field])
+                if value.function_handle is not None
+                else parsed_source[value.field]
             )
         return self._pattern.format(*_args)
 
