@@ -36,6 +36,9 @@ def sanitize_class_name(class_name: str) -> str:
 
 
 def create_enum_key_from_class_name(value: str) -> str:
+    if value == "":
+        raise ValueError("value cannot be an empty string")
+
     suffix = "_" if (value[0] == "_" or value[0].isdigit()) else ""
     return suffix + re.compile(r"[\W_]+").sub("_", value).upper()
 
