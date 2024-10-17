@@ -2,6 +2,7 @@ from typing import List
 
 import pydantic
 from aind_pydantic_codegen.generators import ParsedSource
+from aind_pydantic_codegen.helpers import TemplateHelper
 
 
 class MyMockType(pydantic.BaseModel):
@@ -25,3 +26,6 @@ def mock_data_parser(data: str) -> list[ParsedSource]:
         row = _row.split(",")
         _list.append({key: value for key, value in zip(header, row)})
     return _list
+
+
+mock_template_helper = TemplateHelper()
